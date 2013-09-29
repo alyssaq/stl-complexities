@@ -43,7 +43,7 @@ color:#F3FAFF; background-color:#011C40;}
       C++ Standard Template Library Quick Reference
     </a>
   </h2>
-    <table class="table table-hover">
+    <table id="stl-tab" class="table table-hover">
       <thead>
         <tr>
           <th colspan="2"> <b>Headers</b> </th>
@@ -840,5 +840,14 @@ color:#F3FAFF; background-color:#011C40;}
     <style>
     @import url("http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic");
     </style>
+    <script> /*grey out the unsupported functions*/
+      (function() {var i,j,row,cell,t=document.getElementById("stl-tab");
+        for (i = 8; i < t.rows.length; i++)    { row = t.rows[i];
+        for (j = 2; j < row.cells.length; j++) { cell = row.cells[j];
+          if (cell.innerText === "") {
+           cell.style.backgroundColor="#F8F8F8";
+           cell.style.borderRightColor="#F8F8F8";
+        }}}} )()
+    </script>
   <body>
 </html>
