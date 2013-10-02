@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+	<title>STL table</title>
+</head>
+<body>
+<table border="1" cellspacing="0" cellpadding="0" width="800px">
+  <tbody>
+    <tr>
+      <td colspan="2" width="446px">
+        <b>Headers</b> <br>
+		ne = num elements passed to function<br>
+        n = num elements in container
+      </td>
+      <td width="88px">
+        &lt;vector&gt; <br>
+		(back sequence) (forward, reversible, rand access)
+      </td>
+      <td  width="88px">
+        &lt;deque&gt; <br>
+		(back/front sequence) (forward, reversible, rand access)
+      </td>
+      <td  width="88px">
+        &lt;list&gt; <br>
+		(back/front sequence) (forward, reversible)
+      </td>
+      <td  width="88px">
+        Associative Containers: <br>
+		&lt;set&gt;, &lt;map&gt;
+      </td>
+    </tr>
+    <tr>
+      <td width="117px"></td>
+      <td width="331px">
+        <em>Constructor</em><br> 
+        default: c;<br>
+        fill: c(ne, elem, [alloc]) <br>
+        range: c(inItA, iItB) <br> 
+        copy: c(const c&amp;)<br>
+      </td>
+      <td>
+        vector
+      </td>
+      <td>
+        deque
+      </td>
+      <td>
+        list
+      </td>
+      <td>
+		set, multiset <br>
+		map, multimap
+	  </td>
+    </tr>
+    <tr>
+      <td rowspan="4">
+        <b>capacity</b>
+      </td>
+      <td style="white-space: nowrap">
+        empty(); size(); max_size() &ndash; sys or lib limit
+      </td>
+      <td>
+        O(1)
+      </td>
+      <td>
+        O(1)
+      </td>
+      <td>
+        O(1)
+      </td>
+      <td>
+        O(1)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        resize(n, elem=def) &ndash; changes container size
+      </td>
+      <td>
+        O(n)
+      </td>
+      <td>
+        O(n)
+      </td>
+      <td>
+        O(n)
+      </td>
+      <td valign="top"></td>
+    </tr>
+    <tr>
+      <td>
+        capacity
+      </td>
+      <td>
+        O(1)
+      </td>
+      <td></td>
+      <td></td>
+      <td valign="top"></td>
+    </tr>
+    <tr>
+      <td>
+        reserve(space) - does not change size
+      </td>
+      <td>
+        O(n)
+      </td>
+      <td></td>
+      <td></td>
+      <td valign="top"></td>
+    </tr>
+    <tr>
+      <td rowspan="2">
+        <b>Element Access</b>
+      </td>
+      <td>
+        Iterator: front(), back(). rbegin(), rend()
+      </td>
+      <td>
+        O(1)
+      </td>
+      <td>
+        O(1)
+      </td>
+      <td>
+        O(1)
+      </td>
+      <td>
+        O(1)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        operator[i]; at(i) - throws out_of_range
+      </td>
+      <td>
+        O(1)
+      </td>
+      <td>
+        O(1)
+      </td>
+      <td></td>
+      <td valign="top">
+        O(log n) (map)
+      </td>
+    </tr>
+    <tr>
+      <td rowspan="8">
+        <b>Modifiers</b>
+        <br><br>
+        <strong>insert</strong> returns iterator to first inserted element    
+        <br><br>
+        <strong>erase</strong> returns iterator to 1 + last removed element
+      </td>
+      <td>
+        assign(iterA, iterB): range<br>
+        assign(ne, val): fill
+      </td>
+      <td>
+        O(n)<br>
+        O(n)
+      </td>
+      <td>
+        O(ne)<br>
+        O(ne)
+      </td>
+      <td>
+        O(ne)<br>
+        O(ne)
+      </td>
+      <td valign="top"></td>
+    </tr>
+    <tr>
+      <td  style="white-space: nowrap">
+        insert(iter, val) &ndash; assoc returns pair&lt;it, bool&gt;<br>
+        insert(iter, ne, val)<br>
+        insert(iter, inItA, inItB)
+      </td>
+      <td>
+        O(n)<br> O(n)<br> O(n)
+      </td>
+      <td>
+        O(1)<br> O(ne)<br> O(ne)
+      </td>
+      <td>
+        O(1)<br> O(ne)<br> O(ne)
+      </td>
+      <td valign="top">
+        O(log n) <br> O(1)<br>
+        O(ne log n)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        erase(iter)<br>
+        erase(iterA, iterB)
+      </td>
+      <td>
+        O(n)<br>
+        O(n)
+      </td>
+      <td>
+        O(1)<br>
+        O(ne)
+      </td>
+      <td>
+        O(1)<br>
+        O(ne)
+      </td>
+      <td valign="top">
+        O(1)<br>
+        O(ne)
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td colspan="2" style="text-align:right;">
+        size_t erase(val)
+      </td>
+      <td valign="top">
+        O(log n)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        clear
+      </td>
+      <td>
+        O(n)
+      </td>
+      <td>
+        O(n)
+      </td>
+      <td>
+        O(n)
+      </td>
+      <td valign="top">
+        O(n)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        swap(container &amp;)
+      </td>
+      <td>
+        O(1)
+      </td>
+      <td>
+        O(1)
+      </td>
+      <td>
+        O(1)
+      </td>
+      <td valign="top">
+        O(1)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        push_back(val); pop_back()
+      </td>
+      <td>
+        O(1)
+      </td>
+      <td>
+        O(1)
+      </td>
+      <td>
+        O(1)
+      </td>
+      <td valign="top"></td>
+    </tr>
+    <tr>
+      <td>
+        push_front(val); pop_front()
+      </td>
+      <td></td>
+      <td>
+        O(1)
+      </td>
+      <td>
+        O(1)
+      </td>
+      <td valign="top"></td>
+    </tr>
+    <tr>
+      <td rowspan="6">
+        <b>List Operations</b>
+      </td>
+      <td>
+        remove(val); remove_if(predicate)
+      </td>
+      <td></td>
+      <td></td>
+      <td>
+        O(n)
+      </td>
+      <td valign="top"></td>
+    </tr>
+    <tr>
+      <td>
+        unique([binaryPred])
+      </td>
+      <td></td>
+      <td></td>
+      <td>
+        O(n - 1)
+      </td>
+      <td valign="top"></td>
+    </tr>
+    <tr>
+      <td>
+        merge(list &amp;m, [cmp])
+      </td>
+      <td></td>
+      <td></td>
+      <td>
+        O(n + m -1)
+      </td>
+      <td valign="top"></td>
+    </tr>
+    <tr>
+      <td>
+        reverse
+      </td>
+      <td></td>
+      <td></td>
+      <td>
+        O(n)
+      </td>
+      <td valign="top"></td>
+    </tr>
+    <tr>
+      <td>
+        sort([cmp])
+      </td>
+      <td></td>
+      <td></td>
+      <td>
+        O(n log n)
+      </td>
+      <td valign="top"></td>
+    </tr>
+    <tr>
+      <td>
+        splice(iter, list &amp;newLst); splice(iter, list &amp;, inIter) splice(it,
+        list&amp;, inItA, inItB)
+      </td>
+      <td></td>
+      <td></td>
+      <td>
+        O(ne)
+      </td>
+      <td valign="top"></td>
+    </tr>
+    <tr>
+      <td  style="white-space: nowrap">
+        <b>Assoc containers <br> operations</b>
+      </td>
+      <td>
+        count(); find(); equal_range();<br>
+        lower_bound(); upper_bound()
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td valign="top">
+        O(log n)
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+<table border="1" cellspacing="0" cellpadding="0" >
+  <tbody>
+    <tr>
+      <td colspan="2" width="180px">
+        <b>Container Adaptors</b>
+      </td>
+      <td width="200px">
+        &lt;priority_queue&gt;
+		<br>Maintained as max-heap with vector. make_heap: O(3n)
+      </td>
+      <td width="180px">
+        &lt;queue&gt;
+		<br>FIFO
+		<br>Implemented with deque
+      </td>
+      <td width="180px">
+        &lt;stack&gt;
+		<br>LIFO 
+		<br>Implemented with deque
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>Capacity</b>
+      </td>
+      <td>
+        empty(); size()
+      </td>
+      <td>
+        O(1)
+      </td>
+      <td>
+        O(1)
+      </td>
+      <td>
+        O(1)
+      </td>
+    </tr>
+    <tr>
+      <td rowspan="2">
+        <b>Element Access</b>
+      </td>
+      <td>
+        front(); back()
+      </td>
+      <td></td>
+      <td>
+        O(1)
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        top()
+      </td>
+      <td>
+        O(1)
+      </td>
+      <td></td>
+      <td>
+        O(1)
+      </td>
+    </tr>
+    <tr>
+      <td rowspan="2">
+        <b>Modifiers</b>
+      </td>
+      <td>
+        push()
+      </td>
+      <td>
+        O(log n) &ndash; push_heap
+      </td>
+      <td>
+        O(1) &ndash; push_back
+      </td>
+      <td>
+        O(1) &ndash; push_front
+      </td>
+    </tr>
+    <tr>
+      <td>
+        pop()
+      </td>
+      <td>
+        O(log n) &ndash; pop_head
+      </td>
+      <td>
+        O(1) &ndash; pop_front
+      </td>
+      <td>
+        O(1) &ndash; pop_font
+      </td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

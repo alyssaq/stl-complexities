@@ -1,6 +1,7 @@
 #C++ STL Complexities and References
 
-Link to table: https://alyssaq.github.io/stl-complexities
+Link to table: https://alyssaq.github.io/stl-complexities    
+Description of STL containers: https://gist.github.com/alyssaq/6743129
 
 ##References
 http://www.cplusplus.com/reference/stl/    
