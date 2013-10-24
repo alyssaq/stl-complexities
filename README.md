@@ -1,6 +1,6 @@
 #C++ STL Complexities and References
 
-Link to one-pages of STL container operation complexities:   
+Link to one-page of STL container operation complexities:   
 https://alyssaq.github.io/stl-complexities/table   
 
 Link to full prettier table:    
